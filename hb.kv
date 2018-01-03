@@ -1,0 +1,136 @@
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import Image kivy.core.image.Image
+# pos_hint, size_hint
+
+<Anasayfa>:
+
+    Image:
+        source: "bg.png"
+
+    Label:
+        font_size: '36sp'
+        text: 'Hoş Geldiniz'
+        pos: 0,200
+
+    Button:
+        text: 'İleri'
+        on_press: root.manager.current = root.manager.next()
+        size_hint: None, None
+        size: '150sp', '50sp'
+        pos_hint: {'right': 1}
+
+		
+<icindekiler>:
+    Label:
+        font_size:'42sp'
+        text: 'İçindekiler'
+        pos_hint: {"x":-.27, 'y':.30}
+    Button:
+        size_hint: None, None
+        text: 'Yemekler'
+        size: '250sp', '70sp'
+        on_press: root.manager.current = 'birincisayfa'
+        pos_hint: {"right":0.35, 'top':0.7}
+
+    Button:
+        size_hint: None, None
+        size: '250sp', '70sp'
+        on_press: root.manager.current = 'ikincisayfa'
+        text: 'Sıcak İçecekler'
+        pos_hint: {"right":0.35, 'top':0.60}
+
+    Button:
+        size_hint: None, None
+        size: '250sp', '70sp'
+        text: 'Soğuk İçecekler'
+        on_press: root.manager.current = 'ucuncusayfa'
+        pos_hint: {"right":0.35, 'top':0.50}
+    Button:
+        size_hint: None, None
+        size: '250sp', '70sp'
+        text: 'Specials'
+        on_press: root.manager.current = 'dorduncusayfa'
+        pos_hint: {"right":0.35, 'top':0.40}
+
+
+    Button:
+        size_hint: None, None
+        pos_hint: {'left': 1}
+        text: 'Geri'
+        on_press: root.manager.current = root.manager.previous()
+        size: '150sp', '50sp'
+    Button:
+        size_hint: None, None
+        on_press: root.manager.current = root.manager.next()
+        text: 'İleri'
+        pos_hint: {'right': 1}
+        size: '150sp', '50sp'
+	    
+
+<birincisayfa>:
+    Label:
+        font_size: '42sp'
+        text: 'Yemekler'
+        pos: 210,10
+    Button:
+        size_hint: None, None
+        pos_hint: {'left': 1}
+        text: 'Geri'
+        on_press: root.manager.current = root.manager.previous()
+        size: 150, 50
+    Button:
+        size_hint: None, None
+        on_press: root.manager.current = root.manager.next()
+        text: 'İleri'
+        pos_hint: {'right': 1}
+        size: 150, 50
+<ikincisayfa>:
+    Label:
+        font_size: 42
+        text: 'Sıcak İçecekler'
+        pos: 210,10
+
+    Button:
+        size_hint: None, None
+        pos_hint: {'left': 1}
+        text: 'Geri'
+        on_press: root.manager.current = root.manager.previous()
+        size: 150, 50
+    Button:
+        size_hint: None, None
+        on_press: root.manager.current = root.manager.next()
+        text: 'İleri'
+        pos_hint: {'right': 1}
+        size: 150, 50
+
+<ucuncusayfa>:
+    Label:
+        font_size: 42
+        text: 'Soğuk İçecekler'
+        pos: 210,10
+
+    Button:
+        size_hint: None, None
+        pos_hint: {'left': 1}
+        text: 'Geri'
+        on_press: root.manager.current = root.manager.previous()
+        size: 150, 50
+    Button:
+        size_hint: None, None
+        on_press: root.manager.current = root.manager.next()
+        text: 'İleri'
+        pos_hint: {'right': 1}
+        size: 150, 50
+
+<dorduncusayfa>:
+    Label:
+        font_size: 42
+        text: 'Specials'
+        pos: 210,10
+
+    Button:
+        size_hint: None, None
+        pos_hint: {'left': 1}
+        text: 'Geri'
+        on_press: root.manager.current = root.manager.previous()
+        size: 150, 50
